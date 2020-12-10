@@ -15914,8 +15914,8 @@ var MicRecorder = function () {
       var _this2 = this;
 
       var AudioContext = window.AudioContext || window.webkitAudioContext;
-      this.context = new AudioContext();
-      // this.config.sampleRate = this.context.sampleRate;
+      this.context = new AudioContext({ sampleRate: this.config.sampleRate });
+      this.config.sampleRate = this.context.sampleRate;
       this.lameEncoder = new Encoder(this.config);
 
       var audio = this.config.deviceId ? { deviceId: { exact: this.config.deviceId } } : true;

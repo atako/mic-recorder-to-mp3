@@ -15706,8 +15706,8 @@ var Encoder = function () {
     classCallCheck(this, Encoder);
 
     this.config = {
-      sampleRate: 44100,
-      bitRate: 128
+      sampleRate: 24000,
+      bitRate: 48
     };
 
     Object.assign(this.config, config);

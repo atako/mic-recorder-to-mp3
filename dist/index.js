@@ -15822,7 +15822,8 @@ var MicRecorder = function () {
       // the begining of the recording. It also helps to remove the mouse
       // "click" sound from the output mp3 file.
       startRecordingAt: 300,
-      deviceId: null
+      deviceId: null,
+      sampleRate: 24000
     };
 
     this.activeStream = null;
@@ -15914,7 +15915,7 @@ var MicRecorder = function () {
 
       var AudioContext = window.AudioContext || window.webkitAudioContext;
       this.context = new AudioContext();
-      this.config.sampleRate = this.context.sampleRate;
+      // this.config.sampleRate = this.context.sampleRate;
       this.lameEncoder = new Encoder(this.config);
 
       var audio = this.config.deviceId ? { deviceId: { exact: this.config.deviceId } } : true;

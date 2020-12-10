@@ -13,6 +13,7 @@ class MicRecorder {
       // "click" sound from the output mp3 file.
       startRecordingAt: 300,
       deviceId: null,
+      sampleRate: 24000
     };
 
     this.activeStream = null;
@@ -88,7 +89,7 @@ class MicRecorder {
   start() {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.context = new AudioContext();
-    this.config.sampleRate = this.context.sampleRate;
+    // this.config.sampleRate = this.context.sampleRate;
     this.lameEncoder = new Encoder(this.config);
 
     const audio = this.config.deviceId ? { deviceId: { exact: this.config.deviceId } } : true;
